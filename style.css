@@ -1,0 +1,172 @@
+/* Importando a fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Resetando a margem, o preenchimento padrão e o modelo de caixa para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Configurando a fonte padrão para Poppins */
+}
+
+/* Definindo variáveis de cor no :root (elemento raiz do documento) */
+:root {
+    --primary-color: #fff;        /* Cor primária (branco) */
+    --secondary-color: #333;      /* Cor secundária (cinza escuro) */
+    --main-color: #754ef9;        /* Cor principal (um tom de roxo) */
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    overflow-x: hidden;         /* Impede a rolagem horizontal da página */
+}
+
+/* Estilo para a classe .header */
+.header {
+    position: fixed;            /* Posição fixa para manter o cabeçalho fixo no topo */
+    top: 0;                     /* Posicionado no topo da viewport */
+    left: 0;                    /* Posicionado à esquerda da viewport */
+    width: 100%;                /* Largura total da viewport */
+    padding: 20px 7%;           /* Preenchimento dentro do cabeçalho, 20px superior/inferior, 7% esquerda/direita */
+    background: yellowgreen;  /* Cor de fundo definida como yellowgreen */
+    display: flex;              /* Utilizando flexbox para o layout */
+    align-items: center;        /* Alinhando os itens no centro verticalmente */
+    z-index: 100;               /* Definindo um z-index para controlar a ordem de empilhamento */
+}
+
+/* Estilo para a classe .logo */
+.logo {
+    font-size: 25px;
+    color: var(--main-color); /* Define o tamanho da fonte, cor e utiliza a variável de cor principal */
+    text-decoration: none;    /* Remove a decoração de texto (sublinhado) */
+    font-weight: 600;         /* Define a espessura da fonte como negrito */
+    cursor: default;          /* Define o cursor como padrão (não interativo) */
+    margin-right: auto;       /* Alinha à direita dentro do contêiner pai */
+}
+
+/* Estilo para links dentro da classe .navbar */
+.navbar a {
+    position: relative;        /* Define uma posição relativa para posicionamento absoluto do pseudo-elemento */
+    font-size: 18px;           /* Define o tamanho da fonte para os links da barra de navegação */
+    color: #fff;             /* Define a cor do texto como branco */
+    text-decoration: none;     /* Remove a decoração de texto (sublinhado) */
+    font-weight: 500;          /* Define a espessura da fonte como semibold */
+    margin-right: 35px;        /* Espaçamento à direita entre os links */
+}
+
+/* Estilo para a pseudo-classe active dos links da .navbar */
+.navbar a.active::before {
+    content: '';                /* Adiciona um elemento visual antes do link ativo */
+    position: absolute;         /* Define uma posição absoluta em relação ao elemento pai */
+    left: 0;                    /* Alinha à esquerda do elemento pai */
+    bottom: -6px;               /* Desloca 6 pixels para cima em relação ao fundo do link */
+    width: 100%;                /* Largura total do link ativo */
+    height: 2px;                /* Altura da linha sob o link ativo */
+    background: #fff;         /* Cor da linha sob o link ativo como branco */
+}
+
+/* Estilo para a classe .toggle */
+.toggle {
+    display: flex;             /* Utiliza flexbox para o layout */
+    margin-top: 1px;           /* Espaço superior de 1 pixel para ajuste visual */
+    cursor: pointer;           /* Define o cursor como ponteiro para indicar interatividade */
+}
+
+/* Estilo para o ícone dentro da classe .toggle */
+.toggle .toggle-icon {
+    font-size: 24px;           /* Define o tamanho da fonte para o ícone */
+    color: #fff;             /* Define a cor do ícone como branco */
+}
+
+/* Estilo para a classe .home */
+.home {
+    width: 100%;                /* Largura total do contêiner .home */
+    height: 100vh;              /* Altura igual à altura da viewport (100% da altura visível) */
+    display: flex;              /* Utiliza flexbox para o layout */
+    align-items: center;        /* Alinha os itens no centro verticalmente */
+    padding: 60px 7% 0;         /* Preenchimento superior de 60 pixels, 0 de preenchimento à direita/esquerda */
+}
+
+/* Estilo para a classe .home .home-content */
+.home .home-content {
+    max-width: 440px;           /* Largura máxima do conteúdo dentro da classe .home */
+}
+
+/* Estilo para os elementos h3 dentro de .home-content */
+.home-content h3 {
+    font-size: 32px;            /* Tamanho da fonte para os elementos h3 */
+    line-height: .3;            /* Define a altura da linha para 0.3 vezes a altura da fonte, ajustando o espaçamento entre as linhas */
+}
+
+/* Estilo para os elementos h1 dentro de .home-content */
+.home-content h1 {
+    font-size: 56px;            /* Tamanho da fonte para os elementos h1 */
+    font-weight: 700;           /* Peso da fonte como bold */
+    margin-bottom: 3px;         /* Adiciona uma margem inferior de 3 pixels ao elemento */
+}
+
+/* Estilo para os elementos p dentro de .home-content */
+.home-content p {
+    font-size: 16px;            /* Tamanho da fonte para os elementos p */
+}
+
+/* Estilo para links dentro da classe .social-media */
+.social-media a {
+    display: inline-flex;       /* Utiliza flexbox para o layout em linha */
+    justify-content: center;    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;        /* Centraliza o conteúdo verticalmente */
+    width: 40px;                /* Largura fixa de 40 pixels */
+    height: 40px;               /* Altura fixa de 40 pixels */
+    background: transparent;    /* Fundo transparente */
+    border: 2px solid var(--main-color);   /* Borda sólida com a cor principal */
+    border-radius: 50%;         /* Borda arredondada para criar um círculo */
+    box-shadow: 0 2px 5px #00000033;/* Adiciona uma sombra à caixa com deslocamento vertical de 2px, deslocamento horizontal de 0 e espalhamento de 5px, usando a cor preta com uma transparência de 20% (#00000033) */
+    font-size: 20px;            /* Tamanho da fonte para os links */
+    color: var(--main-color);   /* Cor do texto igual à cor principal */
+    text-decoration: none ;     /* Remove a decoração de texto, como sublinhado, dos elementos */
+    margin: 25px 15px 30px 0;   /* Remove a decoração de texto (sublinhado) */
+    transition: .2s ease;
+}
+
+.social-media a:hover {
+    background-color: var(--main-color);
+    color: #fff;
+    
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 5px #00000033;
+    border: 2px solid transparent;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
