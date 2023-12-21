@@ -273,7 +273,7 @@ body {
     position: absolute;
     bottom: 0;
     right: 5%;
-    width: 60%;
+    width: 59%;
     pointer-events: none;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
