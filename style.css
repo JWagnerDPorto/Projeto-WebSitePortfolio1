@@ -16,6 +16,11 @@
     --main-color: #754ef9;        /* Cor principal (um tom de roxo) */
 }
 
+.dark-mode {
+    --primary-color: #0b061f;        /* Cor primária (branco) */
+    --secondary-color: #fff;
+}
+
 body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -43,16 +48,22 @@ body {
     font-weight: 600;         /* Define a espessura da fonte como negrito */
     cursor: default;          /* Define o cursor como padrão (não interativo) */
     margin-right: auto;       /* Alinha à direita dentro do contêiner pai */
+    opacity: 0;
+    animation: slideRight 1s ease forwards; 
 }
 
 /* Estilo para links dentro da classe .navbar */
 .navbar a {
     position: relative;        /* Define uma posição relativa para posicionamento absoluto do pseudo-elemento */
+    display: inline-block;
     font-size: 18px;           /* Define o tamanho da fonte para os links da barra de navegação */
     color: #fff;             /* Define a cor do texto como branco */
     text-decoration: none;     /* Remove a decoração de texto (sublinhado) */
     font-weight: 500;          /* Define a espessura da fonte como semibold */
     margin-right: 35px;        /* Espaçamento à direita entre os links */
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 
 /* Estilo para a pseudo-classe active dos links da .navbar */
@@ -71,6 +82,9 @@ body {
     display: flex;             /* Utiliza flexbox para o layout */
     margin-top: 1px;           /* Espaço superior de 1 pixel para ajuste visual */
     cursor: pointer;           /* Define o cursor como ponteiro para indicar interatividade */
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 3.5s;
 }
 
 /* Estilo para o ícone dentro da classe .toggle */
@@ -98,6 +112,9 @@ body {
 .home-content h3 {
     font-size: 32px;            /* Tamanho da fonte para os elementos h3 */
     line-height: .3;            /* Define a altura da linha para 0.3 vezes a altura da fonte, ajustando o espaçamento entre as linhas */
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
 }
 
 /* Estilo para os elementos h1 dentro de .home-content */
@@ -105,11 +122,17 @@ body {
     font-size: 56px;            /* Tamanho da fonte para os elementos h1 */
     font-weight: 700;           /* Peso da fonte como bold */
     margin-bottom: 3px;         /* Adiciona uma margem inferior de 3 pixels ao elemento */
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
 }
 
 /* Estilo para os elementos p dentro de .home-content */
 .home-content p {
     font-size: 16px;            /* Tamanho da fonte para os elementos p */
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
 }
 
 /* Estilo para links dentro da classe .social-media */
@@ -126,8 +149,11 @@ body {
     font-size: 20px;            /* Tamanho da fonte para os links */
     color: var(--main-color);   /* Cor do texto igual à cor principal */
     text-decoration: none ;     /* Remove a decoração de texto, como sublinhado, dos elementos */
-    margin: 25px 15px 30px 0;   /* Remove a decoração de texto (sublinhado) */
+    margin: 25px 20px 30px 0;   /* Remove a decoração de texto (sublinhado) */
     transition: .2s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 
 .social-media a:hover {
@@ -138,7 +164,7 @@ body {
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 11px 22px;
     background: var(--main-color);
     border-radius: 6px;
     box-shadow: 0 2px 5px #00000033;
@@ -149,19 +175,21 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: .5s ease;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
 }
 
 .btn:hover {
-    background-color: #fff;
+    background-color: transparent;
     color: var(--main-color);
     border-color: var(--main-color);
 }
 
 .home .skill-container {
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 0;
-    transform: translateY(-50%);
     width: 768px;
     height: 768px;
     overflow: hidden;
@@ -177,6 +205,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards, skillRotate 13s ease-out infinite;
+    animation-delay: 2.5s, 3.5s;
 }
 
 .skill-box .skill {
@@ -211,7 +242,7 @@ body {
 }
 
 .skill h3 {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1;
     font-weight: 600;
 }
@@ -233,17 +264,79 @@ body {
     border-right: 384px solid var(--main-color);
     border-bottom: 384px solid var(--main-color);
     border-left: 384px solid transparent;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.5s;
 }
 
 .home-img img {
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    right: 5%;
+    width: 60%;
     pointer-events: none;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 2.8s;
 }
 
 
+/* KEYFRAMES ANIMATION */
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes skillRotate {
+    0% {
+        transform: rotate(0deg);
+    } 
+    14.3%,28.6% {
+        transform: rotate(-60deg);
+    } 
+    28.6%,42.9% {
+        transform: rotate(-120deg);
+    } 
+    42.9%,57.2% {
+        transform: rotate(-180deg);
+    } 
+    57.2%,71.5% {
+        transform: rotate(-240deg);
+    } 
+    71.5%,85.8% {
+        transform: rotate(-300deg);
+    } 
+    85.8%,100% {
+        transform: rotate(-360deg);
+    } 
+}
 
 
 
