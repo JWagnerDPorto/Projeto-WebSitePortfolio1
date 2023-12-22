@@ -1,167 +1,169 @@
-/* Importando a fonte Poppins do Google Fonts */
+/* Importing the Poppins font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Resetando a margem, o preenchimento padrão e o modelo de caixa para todos os elementos */
+/* Resetting default margin, padding, and box model for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Configurando a fonte padrão para Poppins */
+    font-family: 'Poppins', sans-serif; /* Setting default font to Poppins */
 }
 
-/* Definindo variáveis de cor no :root (elemento raiz do documento) */
+/* Defining color variables in :root (root element of the document) */
 :root {
-    --primary-color: #fff;        /* Cor primária (branco) */
-    --secondary-color: #333;      /* Cor secundária (cinza escuro) */
-    --main-color: #754ef9;        /* Cor principal (um tom de roxo) */
+    --primary-color: #fff;        /* Primary color (white) */
+    --secondary-color: #333;      /* Secondary color (dark gray) */
+    --main-color: #754ef9;        /* Main color (a shade of purple) */
 }
 
+/* Dark mode styles */
 .dark-mode {
-    --primary-color: #0b061f;        /* Cor primária (branco) */
-    --secondary-color: #fff;
+    --primary-color: #0b061f;        /* Primary color in dark mode (white) */
+    --secondary-color: #fff;         /* Secondary color in dark mode (white) */
 }
 
+/* Body styles */
 body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    overflow-x: hidden;         /* Impede a rolagem horizontal da página */
+    overflow-x: hidden;         /* Prevents horizontal scrolling of the page */
 }
 
-/* Estilo para a classe .header */
+/* Styles for the .header class */
 .header {
-    position: fixed;            /* Posição fixa para manter o cabeçalho fixo no topo */
-    top: 0;                     /* Posicionado no topo da viewport */
-    left: 0;                    /* Posicionado à esquerda da viewport */
-    width: 100%;                /* Largura total da viewport */
-    padding: 20px 7%;           /* Preenchimento dentro do cabeçalho, 20px superior/inferior, 7% esquerda/direita */
-    background: transparent;  /* Cor de fundo definida como yellowgreen */
-    display: flex;              /* Utilizando flexbox para o layout */
-    align-items: center;        /* Alinhando os itens no centro verticalmente */
-    z-index: 100;               /* Definindo um z-index para controlar a ordem de empilhamento */
+    position: fixed;            /* Fixed position to keep the header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 7%;
+    background: transparent;    /* Background color set to transparent */
+    display: flex;              /* Using flexbox for layout */
+    align-items: center;
+    z-index: 100;               /* Setting a z-index to control stacking order */
 }
 
-/* Estilo para a classe .logo */
+/* Styles for the .logo class */
 .logo {
     font-size: 25px;
-    color: var(--main-color); /* Define o tamanho da fonte, cor e utiliza a variável de cor principal */
-    text-decoration: none;    /* Remove a decoração de texto (sublinhado) */
-    font-weight: 600;         /* Define a espessura da fonte como negrito */
-    cursor: default;          /* Define o cursor como padrão (não interativo) */
-    margin-right: auto;       /* Alinha à direita dentro do contêiner pai */
-    opacity: 0;
-    animation: slideRight 1s ease forwards; 
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;            /* Default cursor (non-interactive) */
+    margin-right: auto;         /* Aligns to the right within the parent container */
+    opacity: 0;                 /* Initially set to 0 opacity */
+    animation: slideRight 1s ease forwards; /* Animation for sliding in from the right */
 }
 
-/* Estilo para links dentro da classe .navbar */
+/* Styles for links within the .navbar class */
 .navbar a {
-    position: relative;        /* Define uma posição relativa para posicionamento absoluto do pseudo-elemento */
+    position: relative;
     display: inline-block;
-    font-size: 18px;           /* Define o tamanho da fonte para os links da barra de navegação */
-    color: #fff;             /* Define a cor do texto como branco */
-    text-decoration: none;     /* Remove a decoração de texto (sublinhado) */
-    font-weight: 500;          /* Define a espessura da fonte como semibold */
-    margin-right: 35px;        /* Espaçamento à direita entre os links */
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 35px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
 
-/* Estilo para a pseudo-classe active dos links da .navbar */
+/* Styles for the pseudo-class active of links in the .navbar */
 .navbar a.active::before {
-    content: '';                /* Adiciona um elemento visual antes do link ativo */
-    position: absolute;         /* Define uma posição absoluta em relação ao elemento pai */
-    left: 0;                    /* Alinha à esquerda do elemento pai */
-    bottom: -6px;               /* Desloca 6 pixels para cima em relação ao fundo do link */
-    width: 100%;                /* Largura total do link ativo */
-    height: 2px;                /* Altura da linha sob o link ativo */
-    background: #fff;         /* Cor da linha sob o link ativo como branco */
+    content: '';                /* Adds a visual element before the active link */
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
 }
 
-/* Estilo para a classe .toggle */
+/* Styles for the .toggle class */
 .toggle {
-    display: flex;             /* Utiliza flexbox para o layout */
-    margin-top: 1px;           /* Espaço superior de 1 pixel para ajuste visual */
-    cursor: pointer;           /* Define o cursor como ponteiro para indicar interatividade */
+    display: flex;
+    margin-top: 1px;
+    cursor: pointer;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 3.5s;
 }
 
-/* Estilo para o ícone dentro da classe .toggle */
+/* Styles for the icon within the .toggle class */
 .toggle .toggle-icon {
-    font-size: 24px;           /* Define o tamanho da fonte para o ícone */
-    color: #fff;             /* Define a cor do ícone como branco */
+    font-size: 24px;
+    color: #fff;
 }
 
-/* Estilo para a classe .home */
+/* Styles for the .home class */
 .home {
-    width: 100%;                /* Largura total do contêiner .home */
-    height: 100vh;              /* Altura igual à altura da viewport (100% da altura visível) */
-    display: flex;              /* Utiliza flexbox para o layout */
-    align-items: center;        /* Alinha os itens no centro verticalmente */
-    padding: 60px 7% 0;         /* Preenchimento superior de 60 pixels, 0 de preenchimento à direita/esquerda */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 7% 0;
 }
 
-/* Estilo para a classe .home .home-content */
+/* Styles for the .home .home-content class */
 .home .home-content {
-    max-width: 470px;           /* Largura máxima do conteúdo dentro da classe .home */
-    
+    max-width: 470px;
 }
 
-/* Estilo para os elementos h3 dentro de .home-content */
+/* Styles for h3 elements within .home-content */
 .home-content h3 {
-    font-size: 32px;            /* Tamanho da fonte para os elementos h3 */
-    line-height: .3;            /* Define a altura da linha para 0.3 vezes a altura da fonte, ajustando o espaçamento entre as linhas */
+    font-size: 32px;
+    line-height: .3;            /* Adjusting line height */
     opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: .7s;
 }
 
-/* Estilo para os elementos h1 dentro de .home-content */
+/* Styles for h1 elements within .home-content */
 .home-content h1 {
-    font-size: 56px;            /* Tamanho da fonte para os elementos h1 */
-    font-weight: 700;           /* Peso da fonte como bold */
-    margin-bottom: 3px;         /* Adiciona uma margem inferior de 3 pixels ao elemento */
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 3px;
     opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: 1s;
 }
 
-/* Estilo para os elementos p dentro de .home-content */
+/* Styles for p elements within .home-content */
 .home-content p {
-    font-size: 16px;            /* Tamanho da fonte para os elementos p */
+    font-size: 16px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
 }
 
-/* Estilo para links dentro da classe .social-media */
+/* Styles for links within the .social-media class */
 .social-media a {
-    display: inline-flex;       /* Utiliza flexbox para o layout em linha */
-    justify-content: center;    /* Centraliza o conteúdo horizontalmente */
-    align-items: center;        /* Centraliza o conteúdo verticalmente */
-    width: 40px;                /* Largura fixa de 40 pixels */
-    height: 40px;               /* Altura fixa de 40 pixels */
-    background: transparent;    /* Fundo transparente */
-    border: 2px solid var(--main-color);   /* Borda sólida com a cor principal */
-    border-radius: 50%;         /* Borda arredondada para criar um círculo */
-    box-shadow: 0 2px 5px #00000033;/* Adiciona uma sombra à caixa com deslocamento vertical de 2px, deslocamento horizontal de 0 e espalhamento de 5px, usando a cor preta com uma transparência de 20% (#00000033) */
-    font-size: 20px;            /* Tamanho da fonte para os links */
-    color: var(--main-color);   /* Cor do texto igual à cor principal */
-    text-decoration: none ;     /* Remove a decoração de texto, como sublinhado, dos elementos */
-    margin: 25px 20px 30px 0;   /* Remove a decoração de texto (sublinhado) */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px #00000033;
+    font-size: 20px;
+    color: var(--main-color);
+    text-decoration: none;
+    margin: 25px 20px 30px 0;
     transition: .2s ease;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
 
+/* Hover styles for links within .social-media */
 .social-media a:hover {
     background-color: var(--main-color);
     color: #fff;
-    
 }
 
+/* Button styles */
 .btn {
     display: inline-block;
     padding: 11px 22px;
@@ -180,12 +182,14 @@ body {
     animation-delay: 2s;
 }
 
+/* Hover styles for buttons */
 .btn:hover {
     background-color: transparent;
     color: var(--main-color);
     border-color: var(--main-color);
 }
 
+/* Styles for .home .skill-container */
 .home .skill-container {
     position: absolute;
     top: 0;
@@ -195,6 +199,7 @@ body {
     overflow: hidden;
 }
 
+/* Styles for .skill-container .skill-box */
 .skill-container .skill-box {
     position: absolute;
     top: 0;
@@ -210,6 +215,7 @@ body {
     animation-delay: 2.5s, 3.5s;
 }
 
+/* Styles for .skill-box .skill */
 .skill-box .skill {
     position: absolute;
     left: 0;
@@ -224,29 +230,30 @@ body {
     padding: 13px 0;
 }
 
+/* Margin adjustments for specific child elements of .skill-box */
 .skill-box .skill:nth-child(1) i {
     margin-right: 15px;
-
 }
 .skill-box .skill:nth-child(2) i {
     margin-right: 20px;
-
 }
 .skill-box .skill:nth-child(4) i {
     margin-right: 20px;
-
 }
 
+/* Styles for icons within .skill */
 .skill i {
     font-size: 38px;
 }
 
+/* Styles for headings within .skill */
 .skill h3 {
     font-size: 28px;
     line-height: 1;
     font-weight: 600;
 }
 
+/* Styles for .skill-box .circle */
 .skill-box .circle {
     width: 72%;
     height: 72%;
@@ -254,6 +261,7 @@ body {
     border-radius: 50%;
 }
 
+/* Styles for .skill-container .overlay */
 .skill-container .overlay {
     position: absolute;
     top: 0;
@@ -269,6 +277,7 @@ body {
     animation-delay: 1.5s;
 }
 
+/* Styles for images within .home-img */
 .home-img img {
     position: absolute;
     bottom: 0;
@@ -280,9 +289,7 @@ body {
     animation-delay: 2.8s;
 }
 
-
-/* KEYFRAMES ANIMATION */
-
+/* Keyframes animation for sliding in from the right */
 @keyframes slideRight {
     0% {
         opacity: 0;
@@ -293,6 +300,8 @@ body {
         transform: translateX(0px);
     }
 }
+
+/* Keyframes animation for sliding in from the left */
 @keyframes slideLeft {
     0% {
         opacity: 0;
@@ -303,6 +312,8 @@ body {
         transform: translateX(0px);
     }
 }
+
+/* Keyframes animation for sliding in from the top */
 @keyframes slideTop {
     0% {
         opacity: 0;
@@ -314,6 +325,7 @@ body {
     }
 }
 
+/* Keyframes animation for skill rotation */
 @keyframes skillRotate {
     0% {
         transform: rotate(0deg);

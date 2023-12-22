@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!-- Set character set to UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Ensure proper rendering and compatibility with Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Responsive design meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
     <title>Website Portfolio in HTML CSS JS</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Link to Boxicons CSS for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 
+    <!-- Header section -->
     <header class="header">
+        <!-- Portfolio logo with a link -->
         <a href="#" class="logo">Portfolio.</a>
 
+        <!-- Navigation menu -->
         <nav class="navbar">
+            <!-- Navigation links with styles for animation -->
             <a href="#" style="--i:10;" class="active">Home</a>
             <a href="#" style="--i:11;">About</a>
             <a href="#" style="--i:12;">Skills</a>
@@ -22,65 +33,80 @@
             <a href="#" style="--i:14;">Contact</a>
         </nav>
 
+        <!-- Toggle for dark mode -->
         <div class="toggle">
             <i class='bx bx-moon toggle-icon'></i>
         </div>
     </header>
 
+    <!-- Home section -->
     <section class="home">
+        <!-- Content in the home section -->
         <div class="home-content">
             <h3>Hello, I am</h3>
             <h1>JWagner DPorto</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, eum natus! Voluptatem, doloremque. Rerum veniam adipisci dolorem.</p>
+            <!-- Introduction and description -->
+            <p>I am a Software Engineering student, focusing my studies on web development. Currently, I am immersed in the fundamentals of HTML5, CSS3, and JavaScript, aiming to create engaging and interactive online experiences. <br><br>
+                My learning journey is expanding to include PHP, Laravel, and Vue.js, with the goal of building robust and efficient web applications. I am excited to explore new technologies and apply my knowledge to create innovative solutions.
+            </p>
 
+            <!-- Social media links -->
             <div class="social-media">
                 <a href="#" style="--i:7;"><i class='bx bxl-facebook'></i></a>
                 <a href="#" style="--i:8;"><i class='bx bxl-instagram'></i></a>
                 <a href="#" style="--i:9;"><i class='bx bxl-linkedin'></i></a>
             </div>
 
+            <!-- Button to download CV -->
             <a href="#" class="btn">Download CV</a>
         </div>
 
-            <div class="skill-container">
-                <div class="skill-box">
-                    <div class="skill" style="--i:0;">
-                        <i class='bx bx-code-alt'></i>
-                        <h3>Web Developer</h3>
-                    </div>
-                    <div class="skill" style="--i:1;">
-                        <h3>HTML5</h3>
-                        <h3>CSS3</h3>
-                    </div>
-                    <div class="skill" style="--i:2;">
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="skill" style="--i:3;">
-                        <h3>PHP</h3>
-                    </div>
-                    <div class="skill" style="--i:4;">
-                        <h3>Laravel</h3>
-                    </div>
-                    <div class="skill" style="--i:5;">
-                        <h3>Vue.js</h3>
-                    </div>
-
-                    <div class="circle"></div>
-
+        <!-- Skills container -->
+        <div class="skill-container">
+            <!-- Skill box containing various skills -->
+            <div class="skill-box">
+                <!-- Individual skill with an icon -->
+                <div class="skill" style="--i:0;">
+                    <i class='bx bx-code-alt'></i>
+                    <h3>Web Developer</h3>
+                </div>
+                <!-- Grouped skills -->
+                <div class="skill" style="--i:1;">
+                    <h3>HTML5</h3>
+                    <h3>CSS3</h3>
+                </div>
+                <div class="skill" style="--i:2;">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill" style="--i:3;">
+                    <h3>PHP</h3>
+                </div>
+                <div class="skill" style="--i:4;">
+                    <h3>Laravel</h3>
+                </div>
+                <div class="skill" style="--i:5;">
+                    <h3>Vue.js</h3>
                 </div>
 
-                <div class="overlay"></div>
-
-                <div class="home-img">
-                    <img src="home.png" alt="">
-                </div>
+                <!-- Circular element -->
+                <div class="circle"></div>
 
             </div>
 
-            
+            <!-- Overlay for visual effect -->
+            <div class="overlay"></div>
+
+            <!-- Image in the home section -->
+            <div class="home-img">
+                <img src="home.png" alt="">
+            </div>
+
+        </div>
 
     </section>
 
+    <!-- Include JavaScript file -->
     <script src="script.js"></script>
 </body>
+
 </html>
